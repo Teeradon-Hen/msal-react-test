@@ -1,0 +1,11 @@
+import Button from '@mui/material/Button';
+import { useMsal } from '@azure/msal-react';
+export const SignInButton = () => {
+    const {instance } = useMsal()
+    const signIn = () =>{
+        instance.loginPopup({})
+    }
+    return (
+        <Button color="inherit" onClick={signIn}>Sign in</Button>
+    )
+};
